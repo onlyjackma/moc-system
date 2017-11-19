@@ -1,8 +1,9 @@
+# -*- coding:utf-8 -*-
 import os
 import tornado.ioloop
 import tornado.web
 import time
-from edit import EditHandler
+from person_edit import PersonEditHandler
 
 class MainPageHandler(tornado.web.RequestHandler):
     def get(self):
@@ -12,7 +13,7 @@ class MainPageHandler(tornado.web.RequestHandler):
 
 handlers = [
     (r'/',MainPageHandler),
-    (r'/edit',EditHandler),
+    (r'/person_edit',PersonEditHandler),
 
 ]
 

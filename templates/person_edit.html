@@ -1,0 +1,60 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="col-md-4 column col-md-offset-4"  >
+<p align="center" class='text-title'>添加议员信息</p>
+<form action='/person_edit' enctype="multipart/form-data" method='post' class='well'>
+    <div class='form-group'>  
+        <label>议员姓名</label>
+        <input type='text' name='moc-name' class='form-control'/>
+    </div>
+
+  <div class="form-group">
+       <label>议员党派</label>
+        <select class="form-control" name="moc-part">
+          <option>民主党</option>
+          <option>共和党</option>
+        </select>
+    </div>
+
+    <div class='form-group'>  
+        <label>国会机构</label>
+        <select class="form-control" name="moc-depart">
+          <option>众议院</option>
+          <option>参议院</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>进入国会时间</label>
+        <div class="input-append date form_datetime ">
+            <input class='form-control' type="text" value="" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+    </div>
+    <div class="form-group">
+    <label >简历</label>
+        <textarea class="form-control" name="moc-resume" rows="3"></textarea>
+    </div>
+
+    <div class ="form-group">
+        <input id="input-b1" name="moc-himg" type="file" class="file">
+    </div>
+
+    <button type='submit' class='btn btn-primary' onclick='return checkpw()'>保存</button>
+    <a href='/'>返回首页</a>
+</form>
+</div>
+<script type="text/javascript">
+   /*
+    $('#form_datetime').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii'
+    });
+    */
+
+    $(".form_datetime").datetimepicker({
+        format: "yyyy-mm-dd",
+        minView: 2
+    });
+
+</script>
+{%end%}
